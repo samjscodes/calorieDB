@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to <%=appName%></title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1><%=appName%></h1>
+    <div class="navbar">
+      <a href="./">Home page</a>
+      <a href="about">About <%=appName%></a>
+      <a href="search">Search for food</a>
+      <a href="addFood">Add new food</a>
+      <a href="list">List food</a>
+      <a href="register">Register with us</a>
+      <a href="login">Login</a>
+      <a href="logout">Logout</a>
+      <a href="delete">Delete food</a>
+      <a href="updateSearch">Update food</a>
+      <a href="api">Food Api</a>
+    </div>
+    <h2>
+      Here is the list of food. If a food does not exist, please click on Add
+      food page.
+    </h2>
+    <h2>
+      You can also calculate nutritional fact here! Select the food item you
+      would like to check and enter the number of quantity and click calculate.
+    </h2>
+    <form name="ListForm">
+      <table style="width: 100%">
+        <thead>
+          <tr>
+            <th scope="column">Food name</th>
+            <th scope="column">Typical values</th>
+            <th scope="column">Unit of the typical value</th>
+            <th scope="column">Carbs</th>
+            <th scope="column">Fat</th>
+            <th scope="column">Protein</th>
+            <th scope="column">Salt</th>
+            <th scope="column">Sugar</th>
+            <th scope="column">Added by</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% availableFood.forEach(function(food) { %>
+          <tr class="js-food-item">
+            <td>
+              <label>
+                <input
+                  class="js-select"
+                  type="checkbox"
+                  name="selectedFood"
+                  value="<%=food.FoodName%>"
+                /><%=food.FoodName%> <input type="number" name="quantities"
+                class="js-quantity" min=1" value=1">
+              </label>
+            </td>
+            <td><span class="js-type-val"><%=food.TypeVal%></span></td>
+            <td><span class="js-unit"><%=food.Unit%></span></td>
+            <td><span class="js-carbs"><%=food.Carbs%></span>g</td>
+            <td><span class="js-fat"><%=food.Fat%></span>g</td>
+            <td><span class="js-protein"><%=food.Protein%></span>g</td>
+            <td><span class="js-salt"><%=food.Salt%></span>g</td>
+            <td><span class="js-sugar"><%=food.Sugar%></span>g</td>
+            <td><span class="js-user-id"><%=food.USERID%></span></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </form>
+    <button class="button js-calculate-btn">Calculate</button>
+    <div id="totalValues"></div>
+    <script>
+      const calculateBtn = document.querySelector(".js-calculate-btn");
+
+      function calculateValues() {
+        const foodItems = document.querySelectorAll(".js-food-item");
+
+        let totalCarbs = 0,
+          totalFat = 0,
+          totalProtein = 0,
+          totalSalt = 0,
+          totalSugar = 0;
+
+        for (let i = 0; i < foodItems.length; i++) {
+          const foodItem = foodItems[i],
+            selected = foodItem.querySelector(".js-select").checked,
+            quantity = Number(foodItem.querySelector(".js-quantity").value),
+            carbs = Number(foodItem.querySelector(".js-carbs").innerHTML),
+            fat = Number(foodItem.querySelector(".js-fat").innerHTML),
+            protein = Number(foodItem.querySelector(".js-protein").innerHTML),
+            salt = Number(foodItem.querySelector(".js-salt").innerHTML),
+            sugar = Number(foodItem.querySelector(".js-sugar").innerHTML);
+
+          //calculates if the checkboxes are marked
+          if (selected) {
+            totalCarbs += carbs * quantity;
+            totalFat += fat * quantity;
+            totalProtein += protein * quantity;
+            totalSalt += salt * quantity;
+            totalSugar += sugar * quantity;
+          }
+        }
+
+        const totalValues = {
+          carbs: totalCarbs,
+          fat: totalFat,
+          protein: totalProtein,
+          salt: totalSalt,
+          sugar: totalSugar,
+        };
+        //displays the total values
+        //console.log(totalValues);
+        document.write("Total Carbs:" + totalValues.carbs);
+        document.write(", Total Fat:" + totalValues.fat);
+        document.write(", Total Protein:" + totalValues.protein);
+        document.write(", Total Sugar:" + totalValues.sugar);
+        document.write(" <a href=" + "./" + ">Home</a>");
+      }
+
+      calculateBtn.addEventListener("click", (ev) => {
+        calculateValues();
+      });
+    </script>
+  </body>
+</html>

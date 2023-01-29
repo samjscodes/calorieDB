@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add book to <%=appName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1><%=appName%>: Add food</h1>
+    <div class="navbar">
+      <a href="./">Home page</a>
+      <a href="about">About <%=appName%></a>
+      <a href="search">Search for food</a>
+      <a href="addFood">Add new food</a>
+      <a href="list">List food</a>
+      <a href="register">Register with us</a>
+      <a href="login">Login</a>
+      <a href="logout">Logout</a>
+      <a href="delete">Delete food</a>  
+      <a href="updateSearch">Update food</a> 
+      <a href="api">Food Api</a>    
+    </div>
+    <form method="POST" action="/foodAdded">
+      <h4>Use this form to add a food/ingredient.</h4>
+      <h4>Please make sure to fill in all the fields with appropriate values.</h4>
+        <p>Name: <input id="name" type="text" name="name" value="" /></p> 
+        <p>Typical values per: <input id="TypeVal" type="number" name="TypeVal" value="" /></p> 
+        <p>Unit of the typical value:
+          <select id="unit" name="unit">
+            <option value="grams">grams</option>
+            <option value="kilograms">kilograms</option>
+            <option value="litre">litre</option>
+            <option value="millilitres">millilitres</option>
+            <option value="tablespoon">tablespoon</option>
+            <option value="teaspoon">teaspoon</option>
+            <option value="cup">cup</option>
+          </select>
+        </p>
+        <p>Carbs: <input id="carbs" type="number" name="carbs" value="" /></p> 
+        <p>Fat: <input id="fat" type="number" name="fat" value="" /></p> 
+        <p>Protein: <input id="protein" type="number" name="protein" value="" /></p> 
+        <p>Salt: <input id="salt" type="number" name="salt" value="" /></p> 
+        <p>Sugar: <input id="sugar" type="number" name="sugar" value="" /></p> 
+        <input type="submit" class="button" value="Add food">
+      </form>
+  </body>
+</html>
+

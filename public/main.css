@@ -1,0 +1,66 @@
+body{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin:0;
+  padding:0;
+  background-image: url("https://media.tenor.com/mH-z-mJFIVcAAAAC/celery.gif");
+  background-repeat:repeat-x;
+  background-size: 10em 10em;
+  background-position-y: 1em;
+  }
+
+.navbar {
+  background-color: white;
+  margin-top: 2.4em;
+  font-size: 2em;
+  overflow: hidden;  
+}
+
+a {
+  color: darkgreen;
+  font-family: fantasy;
+  text-decoration: none;
+  padding : 0 5px 0 10px;
+}
+
+h1 {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: fantasy;
+    font-size: 4em;
+    color:#033503;
+    text-align: center;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: cadetblue;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;;
+    list-style: none;
+}
+
+.button{
+  background-color: darkgreen; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+table{
+  border:1px solid black;
+}
+td{
+  background-color: thistle;
+}
+tr{
+  background-color:plum;
+}
+

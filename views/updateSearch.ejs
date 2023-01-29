@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Update food in <%=appName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1>Update food in <%=appName%></h1>
+    <div class="navbar">
+      <a href="./">Home page</a>
+      <a href="about">About <%=appName%></a>
+      <a href="search">Search for food</a>
+      <a href="addFood">Add new food</a>
+      <a href="list">List food</a>
+      <a href="register">Register with us</a>
+      <a href="login">Login</a>
+      <a href="logout">Logout</a>
+      <a href="delete">Delete food</a>
+      <a href="updateSearch">Update food</a> 
+      <a href="api">Food Api</a>   
+    </div>
+    <form action="/updateFood" method="GET">
+      <p>Enter the food you would like to update</p>
+      <input id="keyword" type="text" name="keyword" value="Default">
+      <!-- <button type="submit" value="Search" > -->
+      <input type="submit" class="button" value="Search">
+    </form>
+  </body>
+</html>

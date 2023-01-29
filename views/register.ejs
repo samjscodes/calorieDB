@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Register for <%=appName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <!--Page title and links to other pages-->
+    <h1>Register for <%=appName%></h1>
+    <div class="navbar">
+      <a href="./">Home page</a>
+      <a href="about">About <%=appName%></a>
+      <a href="search">Search for food</a>
+      <a href="addFood">Add new food</a>
+      <a href="list">List food</a>
+      <a href="register">Register with us</a>
+      <a href="login">Login</a>
+      <a href="logout">Logout</a>
+      <a href="delete">Delete food</a>
+      <a href="updateSearch">Update food</a> 
+      <a href="api">Food Api</a>  
+    </div>
+    <!--Register form-->
+    <form method="POST" action="/registered">
+      <p> Username: <input id="username" type="text" name="username" value="username"/> </p>  
+      <p>First name: <input id="firstname" type="text" name="firstname" value="first name" /></p>
+      <p>Last name: <input id="lastname" type="text" name="lastname" value="last name" /></p>
+      <p>Email: <input id="email" type="text" name="email" value="email" /></p>
+      <p>Password: <input id="password" type="text" name="password" value="password"/> </p>
+      <input type="submit" class="button" value="Register">
+    </form>
+  </body>
+</html>

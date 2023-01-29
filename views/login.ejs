@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Login for <%=appName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1>Login with your  <%=appName%> username & password!</h1>
+    <div class="navbar">
+      <a href="./">Home page</a>
+      <a href="about">About <%=appName%></a>
+      <a href="search">Search for food</a>
+      <a href="addFood">Add new food</a>
+      <a href="list">List food</a>
+      <a href="register">Register with us</a>
+      <a href="login">Login</a>
+      <a href="logout">Logout</a>
+      <a href="delete">Delete food</a>   
+      <a href="updateSearch">Update food</a> 
+      <a href="api">Food Api</a>   
+    </div>
+    <form method="POST" action="/loggedin">
+      <p> Username: <input id="username" type="text" name="username" value="username"/> </p>  
+      <p>Password: <input id="password" type="text" name="password" value="password"/> </p>
+      <!-- <button type="submit" value="Login"/> -->
+      <input type="submit" class="button" value="Login">
+  </body>
+</html>
